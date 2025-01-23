@@ -68,7 +68,7 @@ contract SongNFT is ERC721URIStorage, Ownable {
     function mintNFT(address _to) external payable returns (uint256) {
 		// Ensures the payment is sufficient using the NFT price
         // Fill in with appropriate variable | ASSIGNMENT #3
-        require(msg.value >= YOUR_CODE_GOES_HERE, "Insufficient payment"); 
+        require(msg.value >= nftPrice, "Insufficient payment"); 
 
 		// Increment the token ID and save it to newTokenId here
         _currentTokenId++; // ASSIGNMENT #4
@@ -120,7 +120,7 @@ contract SongNFT is ERC721URIStorage, Ownable {
             nftPrice: nftPrice, 
             artist: artist,
             audioURI: audioURI,
-            coverURI: coverURI,, 
+            coverURI: coverURI,
             royaltyBalance: royaltyBalance,
             currentTokenId: _currentTokenId 
         });
